@@ -2,16 +2,21 @@
   "name": "google-login",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src -d lib",
     "test": "ava"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.19.1",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.4.0",
-    "sinon": "^2.2.0"
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
+    "sinon": "^2.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   },
   "ava": {
     "files": [
@@ -27,5 +32,6 @@
     ],
     "babel": "inherit"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

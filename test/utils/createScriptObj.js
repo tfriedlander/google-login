@@ -15,7 +15,7 @@ test('throws error when no doc object provided', t => {
     () => {
       createScriptObj('asdf', () => {}, null)
     },
-    TypeError
+    Error
   )
   t.is(error.message, t.context.error)
 })
@@ -25,7 +25,7 @@ test('throws error when no doc.createElement available', t => {
     () => {
       createScriptObj('asdf', () => {}, {})
     },
-    TypeError
+    Error
   )
   t.is(error.message, t.context.error)
 })

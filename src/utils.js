@@ -23,8 +23,8 @@ function getHeadEl(doc = document) {
  * @return {object} body dom object or null if not found
  */
 function getBodyEl(doc = document) {
-  const docObj = doc || {}
-  return docObj.body || docObj.documentElement
+  const { body, documentElement } = (doc || {})
+  return body || documentElement
 }
 
 /**
@@ -37,7 +37,7 @@ function getBodyEl(doc = document) {
  */
 function createScriptObj(src, callback, doc = document) {
   if (!doc || !doc.createElement) {
-    throw new TypeError('unable to create dom object')
+    throw new Error('unable to create dom object')
   }
   const script = doc.createElement('script')
   script.addEventListener('load', callback, false)
