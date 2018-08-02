@@ -37,8 +37,6 @@ function render(text, clickable=true) {
   ReactDOM.render(el, root)
 }
 
-render('Processing...', false)
-
 // initializing google sign-in
 async function init() {
   await initOAuth(CLIENT_ID)
@@ -46,4 +44,7 @@ async function init() {
   await onSignInChange(signInChange)
   render(isSignedIn() ? 'Sign Out' : 'Sign In')
 }
+
+render('Processing...', false)
+init()
 ```
