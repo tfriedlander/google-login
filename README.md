@@ -37,6 +37,22 @@ function render(text, clickable=true) {
   ReactDOM.render(el, root)
 }
 
+function getUserInfo(cl = clientLogin) {
+  const currentUser = cl.isSignedIn() ? cl.currentUser() : null
+  if (!currentUser) {
+    return null
+  }
+  const profile = currentUser.getBasicProfile()
+  return {
+    id: profile.getId(),
+    name: profile.getName(),
+    givenName: profile.givenName(),
+    familyName: profile.getFamilyName(),
+    imageUrl: profile.getImageUrl(),
+    email: profile.getEmail()
+  }
+}
+
 // initializing google sign-in
 async function init() {
   await initOAuth(CLIENT_ID)
